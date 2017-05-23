@@ -1,4 +1,9 @@
 
+ <?php
+         
+        /* Iniciando la sesión*/
+        session_start();
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -121,7 +126,7 @@
                 <div class="col-md-8">
                     <div class="container-fluid">
                         <div class="row">
-						 <div class="col-md-6">
+                         <div class="col-md-6">
                                 <div class="feature-item" align="center">
                                    
                                     <h3>Pollo</h3>
@@ -212,7 +217,7 @@
             </div>
         </div>
     </section>
-	
+    
     <section id="contact" class="contact bg-primary text-center">
         <div class="container">
             <div class="row">
@@ -281,7 +286,29 @@
 
     <section id="contact" class="contact bg-primary">
      
-
+        <?php
+         
+        /* Iniciando la sesión*/
+        //session_start();
+         
+        /* Cambiar según la ubicación de tu directorio*/
+        require_once __DIR__ . '/facebook/src/Facebook/autoload.php';
+         
+        $fb = new Facebook\Facebook([
+          'app_id' => '428124097567667',
+          'app_secret' => '6447f81ed44dc3a258ccd223576abde5',
+          'default_graph_version' => 'v2.9',
+        ]);
+          
+        $helper = $fb->getRedirectLoginHelper();
+          
+        $permissions = ['email']; // Permisos opcionales
+        $loginUrl = $helper->getLoginUrl('http://www.legendofanime.com ', $permissions);
+          
+        /* Link a la página de login*/
+        echo '<a href="' . htmlspecialchars($loginUrl) . '">Login con Facebook!</a>';
+         
+        ?>
         <div class="container">
             <h2>Accede a nuestro portal</h2>
             <ul class="list-inline list-social">
@@ -293,7 +320,7 @@
             </ul>
         </div>
     </section>
-	
+    
     <footer>
         <div class="container">
             <p>&copy; 2017 Universidad Cooperativa de Colombia. All Rights Reserved.</p>
