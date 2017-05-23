@@ -1,5 +1,6 @@
-<?php
- 
+
+ <?php
+         
         /* Iniciando la sesión*/
         session_start();
         ?>
@@ -125,7 +126,7 @@
                 <div class="col-md-8">
                     <div class="container-fluid">
                         <div class="row">
-						 <div class="col-md-6">
+                         <div class="col-md-6">
                                 <div class="feature-item" align="center">
                                    
                                     <h3>Pollo</h3>
@@ -216,7 +217,7 @@
             </div>
         </div>
     </section>
-	
+    
     <section id="contact" class="contact bg-primary text-center">
         <div class="container">
             <div class="row">
@@ -284,9 +285,9 @@
     </section>
 
     <section id="contact" class="contact bg-primary">
-        <!-- TWITTER-->
+     
         <?php
- 
+         
         /* Iniciando la sesión*/
         //session_start();
          
@@ -307,10 +308,7 @@
         /* Link a la página de login*/
         echo '<a href="' . htmlspecialchars($loginUrl) . '">Login con Facebook!</a>';
          
-?>
-        <!--<a class="twitter-timeline" href="https://twitter.com/UCooperativaCol">Tweets by UCooperativaCol</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
-        <!-- TWITTER-->
-
+        ?>
         <div class="container">
             <h2>Accede a nuestro portal</h2>
             <ul class="list-inline list-social">
@@ -322,7 +320,7 @@
             </ul>
         </div>
     </section>
-	
+    
     <footer>
         <div class="container">
             <p>&copy; 2017 Universidad Cooperativa de Colombia. All Rights Reserved.</p>
