@@ -1,3 +1,8 @@
+<?php
+ 
+        /* Iniciando la sesión*/
+        session_start();
+        ?>
 <!DOCTYPE html>
 <html lang="en">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
@@ -280,7 +285,53 @@
 
     <section id="contact" class="contact bg-primary">
         <!-- TWITTER-->
+        <?php
+ 
+<<<<<<< HEAD
+        /* Iniciando la sesión*/
+        //session_start();
+         
+        /* Cambiar según la ubicación de tu directorio*/
+        require_once __DIR__ . '/facebook/src/Facebook/autoload.php';
+         
+        $fb = new Facebook\Facebook([
+          'app_id' => '428124097567667',
+          'app_secret' => '6447f81ed44dc3a258ccd223576abde5',
+          'default_graph_version' => 'v2.9',
+        ]);
+          
+        $helper = $fb->getRedirectLoginHelper();
+          
+        $permissions = ['email']; // Permisos opcionales
+        $loginUrl = $helper->getLoginUrl('http://www.legendofanime.com ', $permissions);
+          
+        /* Link a la página de login*/
+        echo '<a href="' . htmlspecialchars($loginUrl) . '">Login con Facebook!</a>';
+         
+?>
+=======
+		/* Iniciando la sesión*/
+		session_start();
 
+		/* Cambiar según la ubicación de tu directorio*/
+		require_once __DIR__ . '/facebook/src/Facebook/autoload.php';
+
+		$fb = new Facebook\Facebook([
+		  'app_id' => '428124097567667',
+		  'app_secret' => '6447f81ed44dc3a258ccd223576abde5',
+		  'default_graph_version' => 'v2.9',
+		]);
+
+		$helper = $fb->getRedirectLoginHelper();
+
+		$permissions = ['email']; // Permisos opcionales
+		$loginUrl = $helper->getLoginUrl('https://charlielui05.github.io/tazmania/', $permissions);
+
+		/* Link a la página de login*/
+		echo '<a href="' . htmlspecialchars($loginUrl) . '">Login con Facebook!</a>';
+
+	?>
+>>>>>>> origin/tucho
         <!--<a class="twitter-timeline" href="https://twitter.com/UCooperativaCol">Tweets by UCooperativaCol</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>-->
         <!-- TWITTER-->
 
