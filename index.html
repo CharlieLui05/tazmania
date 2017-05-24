@@ -27,6 +27,66 @@
     <link href="css/charlu.min.css" rel="stylesheet">
 
 
+    
+    <script src="https://www.gstatic.com/firebasejs/4.0.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyAke7qTZjiaqt89wkIFUD6_QwsQrRMfUnI",
+            authDomain: "fb-login-42932.firebaseapp.com",
+            databaseURL: "https://fb-login-42932.firebaseio.com",
+            projectId: "fb-login-42932",
+            storageBucket: "fb-login-42932.appspot.com",
+            messagingSenderId: "940513700811"
+        };
+
+        firebase.initializeApp(config);
+    </script>
+
+
+    <script type="text/javascript">
+       
+
+        function logface(){
+             var provider = new firebase.auth.FacebookAuthProvider();
+
+            firebase.auth().signInWithPopup(provider).then(function(result) {
+                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+                var token = result.credential.accessToken;
+                // The signed-in user info.
+                var user = result.user;
+                // ...
+                
+
+                console.log(user);
+            }).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // The email of the user's account used.
+                var email = error.email;
+                // The firebase.auth.AuthCredential type that was used.
+                var credential = error.credential;
+                // ...
+            });           
+            
+        }
+
+        function outface(){
+            firebase.auth().signOut().then(function() {
+              // Sign-out successful.
+               alert("log out");
+            }, function(error) {
+              // An error happened.
+              alert("error");
+            });
+        }
+
+    </script>
+
+    
+
+
 
 </head>
 
@@ -281,7 +341,7 @@
     <section id="contact" class="contact bg-primary">
         <!-- TWITTER-->
 
-        
+            
         <!-- TWITTER-->
 
         <div class="container">
@@ -289,8 +349,11 @@
             <ul class="list-inline list-social">
 
                 <li class="social-facebook">
-                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a onclick="logface()" id="fblogin"><i class="fa fa-facebook"></i></a>
                 </li>
+                <!--<li class="social-facebook">
+                    <a onclick="outface()" id="fblogout">S</a>
+                </li>-->
 
             </ul>
         </div>
