@@ -55,10 +55,15 @@
                 var token = result.credential.accessToken;
                 // The signed-in user info.
                 var user = result.user;
-                // ...
+                // Data users
+                urlimg = user.photoURL;
+                nombre = user.displayName;
+                //
+                var elemento = document.getElementById("loginfb");
+                elemento.style.display = 'none';
+                etiqueta = '<img src="'+urlimg+'" title="'+nombre+'" class="img-circle">';
+                document.getElementById("imgfb").innerHTML = etiqueta;
                 
-
-                console.log(user);
             }).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -348,12 +353,12 @@
             <h2>Accede a nuestro portal</h2>
             <ul class="list-inline list-social">
 
-                <li class="social-facebook">
+                <li class="social-facebook" id="loginfb">
                     <a onclick="logface()" id="fblogin"><i class="fa fa-facebook"></i></a>
                 </li>
-                <!--<li class="social-facebook">
-                    <a onclick="outface()" id="fblogout">S</a>
-                </li>-->
+                <li class="social-facebook" id="imgfb">
+                    
+                </li>
 
             </ul>
         </div>
